@@ -1,5 +1,6 @@
 package cn.tedu.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -11,8 +12,10 @@ public class Activity {
     private String title;
     private String category;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern= "yyyy-MM-dd HH:mm",timezone="GMT+8")
     private Date startTime;//java.util.Date
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern= "yyyy-MM-dd HH:mm",timezone="Asia/Shanghai")
     private Date endTime;
     private String remark;
     private Integer state;
