@@ -4,6 +4,7 @@ import cn.tedu.pojo.Activity;
 import cn.tedu.service.ActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -27,4 +28,10 @@ public class ActivityController {
     public List<Activity> doFindActivitys(){
         return activityService.findActivity();
     }//Spring MVC框架底层默认会使用jackson API将对象转换为json格式字符串。
+    @RequestMapping(value = "activity/doDeleteById")
+    @ResponseBody
+    public String doDeleteById(Long id){
+       activityService.doDeleteById(id);
+       return "delete ok";
+    }
 }

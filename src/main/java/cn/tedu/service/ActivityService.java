@@ -4,9 +4,14 @@ import cn.tedu.pojo.Activity;
 
 import java.util.List;
 
+
+public interface ActivityService {
     /*
      * 查询所有信息
      * */
-public interface ActivityService {
     List<Activity> findActivity();
+    /*
+     * 删除信息
+     * */
+    int doDeleteById(Long id);
 }

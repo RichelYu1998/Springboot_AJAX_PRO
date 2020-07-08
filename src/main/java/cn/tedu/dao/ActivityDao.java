@@ -1,8 +1,10 @@
 package cn.tedu.dao;
 
 import cn.tedu.pojo.Activity;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+
 
 import java.util.List;
 
@@ -13,4 +15,9 @@ public interface ActivityDao {
     * */
     @Select("select * from tb_activity")
     List<Activity> findActivity();
+    /*
+     * 删除信息
+     * */
+    @Delete("delete from tb_activity where id=#{id}")
+    int doDeleteById(Long id);
 }

@@ -18,4 +18,9 @@ public class ActivityServiceImpl implements ActivityService {
     public List<Activity> findActivity() {
         return activityDao.findActivity();
     }
+
+    @Override
+    public int doDeleteById(Long id) {
+        return activityDao.doDeleteById(id);
+    }
 }

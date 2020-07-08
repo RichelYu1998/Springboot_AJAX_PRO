@@ -66,8 +66,20 @@
 	           <td>${item.startTime}</td>
 	           <td>${item.endTime}</td>
 	           <td>${item.state==1?'有效':'无效'}</td>
-	           <td>delete</td>*
+	           <td><button class='btn btn-warning' onclick='doDeleteById(${item.id})' >delete</button></td>
 	         </tr>`;
+    }
+    function doDeleteById(id) {
+        if(!confirm("确定删除吗"))return;
+        //定义url
+        var url='doDeleteById';
+        //定义参数
+        var params='id='+id;
+        //发送异步请求
+        $.post(url,params,function (result) {
+            alert(result);
+            doGetActivity();
+        });
     }
 </script>
 </body>
