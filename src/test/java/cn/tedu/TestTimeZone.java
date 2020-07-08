@@ -10,6 +10,9 @@ import java.util.Set;
 public class TestTimeZone {
     @Test
     void TestTimeZone() {
-        Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
+        Set<String> set = ZoneId.getAvailableZoneIds();
+        for (String s:set) {
+            System.out.println("s="+s);
+        }
     }
 }
