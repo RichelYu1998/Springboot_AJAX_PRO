@@ -99,7 +99,7 @@
         //3.发送异步ajax请求，处理响应结果x
         //Jquery中Get函数应用
         //向服务端发送Get请求，并将服务端返回的json格式字符串转换为json格式的js对象
-        $.get(url, function (result) {
+        $.getJSON(url, function (result) {
             //获取tbody对象
             var tBody = $("#tbodyId")
             //清空tbody中内容
