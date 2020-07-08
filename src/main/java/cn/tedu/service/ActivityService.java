@@ -14,4 +14,8 @@ public interface ActivityService {
      * 删除信息
      * */
     int doDeleteById(Long id);
+    /*
+     * 新增数据
+     * */
+    int saveObject(Activity entity);
 }

@@ -18,9 +18,20 @@ public class ActivityServiceImpl implements ActivityService {
     public List<Activity> findActivity() {
         return activityDao.findActivity();
     }
-
+    /*
+     * 删除信息
+     * */
     @Override
     public int doDeleteById(Long id) {
         return activityDao.doDeleteById(id);
     }
+    /*
+     * 新增数据
+     * */
+
+    @Override
+    public int saveObject(Activity entity) {
+        return activityDao.insertObject(entity);
+    }
+
 }

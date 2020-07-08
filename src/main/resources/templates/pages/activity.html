@@ -74,7 +74,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" onclick="doSaveOrUpdate()">Save changes</button>
             </div>
         </div>
     </div>
@@ -132,6 +132,15 @@
             alert(result);
             doGetActivity();
         });
+    }
+
+    function doSaveOrUpdate() {
+        var url = "doSaveObject"
+        var params = $("form").serialize();
+        $.post(url, params, function (result) {
+            $('myModal').modal('hide');
+            doGetActivity();
+        })
     }
 </script>
 </body>
